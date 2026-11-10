@@ -12,10 +12,7 @@ const uint8_t  kDiodePin  = 19;   // Blue LED
 const unsigned long kBlinkMs = 200;
 unsigned long blinkStart = 0;
 
-IRrecv irrecv(kIrRecvPin);
 decode_results results;
-
-struct_message myData;
 
 bool wasPressed = false;
 bool blinking = false;
@@ -26,8 +23,6 @@ void setup() {
 
   pinMode(kButtonPin, INPUT_PULLUP);
   pinMode(kDiodePin, OUTPUT);
-
-  irrecv.enableIRIn();
 }
 
 void loop() {
